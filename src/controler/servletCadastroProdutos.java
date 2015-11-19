@@ -1,4 +1,6 @@
+package controler;
 
+import model.*;
 
 import java.io.IOException;
 
@@ -10,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class servletLimparCarrinho
+ * Servlet implementation class servletCadastro
  */
-@WebServlet("/servletLimparCarrinho.jsp")
-public class servletLimparCarrinho extends HttpServlet {
+@WebServlet("/servletCadastroProdutos.jsp")
+public class servletCadastroProdutos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public servletLimparCarrinho() {
+    public servletCadastroProdutos() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,17 +30,32 @@ public class servletLimparCarrinho extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(true);
-		session.invalidate();
-		
-		response.sendRedirect("index.html");
-	}
+		request.getRequestDispatcher("cadastroFormulario.html").include(request,response);
+	}	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		HttpSession session = request.getSession(false);
+		
+		if(session != null){
+			String nome = request.getParameter("nome");
+			String descricao = request.getParameter("descricao");
+			String preco = request.getParameter("preco");
+			
+			double precoDouble = Double.parseDouble(preco);
+			
+			Produto p = new Produto();
+			p.setNome(nome);
+			p.setDescricao(descricao);
+			p.setPreco(precoDouble);
+			
+			Banco.getInstance().addProduto(p);
+			response.sendRedirect("servletListarProdutos.jsp");
+		}else{
+			response.sendRedirect("loginAdministrador.html");
+		}
 	}
 
 }

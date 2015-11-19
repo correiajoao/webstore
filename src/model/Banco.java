@@ -1,3 +1,4 @@
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -5,7 +6,9 @@ import java.util.List;
 public class Banco {
 	private static Banco instance = null;
 
+	private Administrador admin = new Administrador("admin@admin.com", "adminadmin");
 	private List<Produto> produtos;
+	
 	public static int cod = 0;
 
 	private Banco() {
@@ -28,7 +31,7 @@ public class Banco {
 		return produtos;
 	}
 	
-	public Produto findProduto(int cod) {
+	public Produto buscarProduto(int cod) {
 		Produto result = new Produto();
 		for (Produto p : produtos) {
 			if(cod == p.getCod()){
@@ -36,5 +39,13 @@ public class Banco {
 			}
 		}
 		return result;
+	}
+	
+	public boolean verificarAdmin(Administrador _admin){
+		if(_admin.getEmail().equals(admin.getEmail()) && _admin.getSenha().equals(admin.getSenha())){
+			return true;
+		}else{
+			return false;
+		}
 	}
 }

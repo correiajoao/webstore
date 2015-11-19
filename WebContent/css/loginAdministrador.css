@@ -1,0 +1,74 @@
+
+  body{
+    background: url('webstore.jpg');
+  }
+  .caixa-aviso{
+    background: #eeeeee;	
+    background: -webkit-linear-gradient(#eeeeee 0%, #eeeeee 100%);	
+    background: -o-linear-gradient(#eeeeee 0%, #eeeeee 100%);
+    background: linear-gradient(#eeeeee 0%, #eeeeee 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient(          startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 ); 
+    font: bold 20px sans-serif;
+    color: red;
+    width: 500px;
+    height: 25px;
+    text-align: center;
+    border-radius:3px;
+    margin: 20px auto 0;
+    display:none;   
+  }  
+  .caixa-login{
+    background-color:#1992b7;
+    width:380px;
+    height:260px;
+    margin: 140px auto 0;
+    border-radius:5px;
+  }  
+  .caixa-login-interna{
+    background-color:white;
+    width:360px;
+    height:240px;
+    position: absolute;
+    margin: 10px;
+    border-radius: 5px;
+  } 
+    
+ .titulo-caixa-login{
+   background: #eeeeee; /* Old browsers */
+   background: -webkit-linear-gradient(#eeeeee 0%, #eeeeee 100%);
+   background: -o-linear-gradient(#eeeeee 0%, #eeeeee 100%);
+   background: linear-gradient(#eeeeee 0%, #eeeeee 100%); 
+   filter: progid:DXImageTransform.Microsoft.gradient(          startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 ); 
+   text-align:center;
+   font: bold 14px/45px sans-serif;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px; 
+   border-bottom: 1px solid #bfc3c5;
+   color:#555555;
+   text-shadow:1px 0px 1px white;
+  } 
+    
+ .email, .senha {
+   width:310px;
+   height:35px;
+   padding-left:5px;
+   margin-top:10px;
+   margin-left:23px;
+   font: normal 13px sans-serif;
+   border: 1px solid #bfc4c6;
+ } 
+  
+ .email:hover .senha:hover{
+   background-color:#e0f1fc;
+ }
+    
+ .botao{
+   width:100px;
+   height:35px;
+   margin-top:10px;
+   margin-left:130px;
+   font: normal 13px sans-serif;
+   border: 1px solid #bfc4c6;
+ }   
+ 
+  

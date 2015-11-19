@@ -1,5 +1,6 @@
+package controler;
 
-
+import model.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 

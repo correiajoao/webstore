@@ -1,7 +1,7 @@
+package controler;
 
-
+import model.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -39,12 +39,12 @@ public class servletAddCarrinho extends HttpServlet {
 		if(session == null){
 			System.out.println("Sem sessão");
 			session = request.getSession(true);
-			Produto p = Banco.getInstance().findProduto(idInt);
+			Produto p = Banco.getInstance().buscarProduto(idInt);
 			carrinho.adicionarProduto(p);
 		}else{
 			System.out.println("Com sessão");
 			carrinho = (Carrinho) session.getAttribute("carrinho");	
-			Produto p = Banco.getInstance().findProduto(idInt);
+			Produto p = Banco.getInstance().buscarProduto(idInt);
 			List<Produto> listaProdutos = carrinho.getListaDeProdutos();
 			
 			if(carrinho.buscarProduto(p.getCod())){
