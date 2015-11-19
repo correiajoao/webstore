@@ -30,7 +30,19 @@ public class servletCadastroProdutos extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("cadastroFormulario.html").include(request,response);
+		HttpSession session = request.getSession(false);
+	
+		if(session != null){
+			Administrador admin = (Administrador) session.getAttribute("administrador");
+			
+			if(admin != null){
+				response.sendRedirect("cadastroProdutos.html");
+			}else{
+				response.sendRedirect("loginAdministrador.html");
+			}
+		}else{
+			response.sendRedirect("loginAdministrador.html");
+		}
 	}	
 
 	/**
@@ -40,22 +52,28 @@ public class servletCadastroProdutos extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		
 		if(session != null){
-			String nome = request.getParameter("nome");
-			String descricao = request.getParameter("descricao");
-			String preco = request.getParameter("preco");
+			Administrador admin = (Administrador) session.getAttribute("administrador");
 			
-			double precoDouble = Double.parseDouble(preco);
-			
-			Produto p = new Produto();
-			p.setNome(nome);
-			p.setDescricao(descricao);
-			p.setPreco(precoDouble);
-			
-			Banco.getInstance().addProduto(p);
-			response.sendRedirect("servletListarProdutos.jsp");
+			if(admin != null){			
+				String nome = request.getParameter("nome");
+				String descricao = request.getParameter("descricao");
+				String preco = request.getParameter("preco");
+				
+				double precoDouble = Double.parseDouble(preco);
+				
+				Produto p = new Produto();
+				p.setNome(nome);
+				p.setDescricao(descricao);
+				p.setPreco(precoDouble);
+				
+				Banco.getInstance().addProduto(p);
+				response.sendRedirect("cadastroProdutos.html");
+			}else{
+				response.sendRedirect("loginAdministrador.html");
+			}
 		}else{
 			response.sendRedirect("loginAdministrador.html");
-		}
+		}	
 	}
 
 }
