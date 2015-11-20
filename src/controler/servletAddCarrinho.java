@@ -37,30 +37,46 @@ public class servletAddCarrinho extends HttpServlet {
 		int idInt = Integer.parseInt(id);
 		
 		if(session == null){
-			System.out.println("Sem sessão");
 			session = request.getSession(true);
 			Produto p = Banco.getInstance().buscarProduto(idInt);
+			p.setQtd(1);
 			carrinho.adicionarProduto(p);
-		}else{
-			System.out.println("Com sessão");
+		}else if (session != null){
 			carrinho = (Carrinho) session.getAttribute("carrinho");	
-			Produto p = Banco.getInstance().buscarProduto(idInt);
-			List<Produto> listaProdutos = carrinho.getListaDeProdutos();
+			if(carrinho == null){
+				session = request.getSession(true);
+				Produto p = Banco.getInstance().buscarProduto(idInt);
+				p.setQtd(1);
+				carrinho.adicionarProduto(p);	
+			}else {
+				System.out.println("Com sessão");
+				carrinho = (Carrinho) session.getAttribute("carrinho");	
+				
+				Produto produto = Banco.getInstance().buscarProduto(idInt);
+				Produto produtoAux = new Produto();
+				
+				List<Produto> _listaProdutos = carrinho.getListaDeProdutos();
 			
-			if(carrinho.buscarProduto(p.getCod())){
-				for (Produto _p : listaProdutos) {
-					if(_p.getCod() == p.getCod()){
-						carrinho.atualizarQuantidade(_p.getCod());
+				if(carrinho.buscarProduto(produto.getCod())){
+					for (Produto _p : _listaProdutos){
+						if(_p.getCod() == produto.getCod()){
+							produtoAux = _p;
+							System.out.println("Quantidade "+ _p.getQtd());
+						}
 					}
-				}
-			}else{
-				carrinho.adicionarProduto(p);
-			}
+					
+				carrinho.removerProduto(produtoAux);
+				produtoAux.setQtd(produtoAux.getQtd()+1);
+				carrinho.adicionarProduto(produtoAux);
+				}else{
+					carrinho.adicionarProduto(produto);
+				}		
 		}
+	}
+	session.invalidate();	
+	session = request.getSession(true);
+	session.setAttribute("carrinho", carrinho);
+	response.sendRedirect("servletListarProdutos.jsp");
 		
-		session.setAttribute("carrinho", carrinho);
-		response.sendRedirect("servletProdutosCarrinho.jsp");
-	
-		}
-
-}
+	}
+}	

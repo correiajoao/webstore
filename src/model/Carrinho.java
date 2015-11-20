@@ -12,8 +12,11 @@ public class Carrinho {
 	}
 
 	public void adicionarProduto(Produto p){
-		p.setQtd(1);
 		lista.add(p);
+	}
+	
+	public void removerProduto(Produto p){
+		lista.remove(p);
 	}
 	
 	public boolean buscarProduto(int cod){
@@ -24,17 +27,5 @@ public class Carrinho {
 			}
 		}
 		return result;
-	}
-	
-	public void atualizarQuantidade(int cod){
-		Produto p = new Produto();
-		for (Produto produto : lista) {
-			if(produto.getCod() == cod){
-				p = produto;
-			}
-		}
-		lista.remove(p);
-		p.setQtd(p.getQtd()+1);
-		lista.add(p);
-	}
+	}	
 }

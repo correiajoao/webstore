@@ -5,14 +5,25 @@ import java.util.List;
 
 public class Banco {
 	private static Banco instance = null;
-
-	private Administrador admin = new Administrador("admin@admin.com", "adminadmin");
 	private List<Produto> produtos;
-	
-	public static int cod = 0;
+	Administrador admin;
+	public static int cod = 3;
 
+	
 	private Banco() {
 		produtos = new ArrayList<>();
+		
+		//Pré cadastro do administrador do sistema
+		admin = new Administrador("admin@admin.com", "adminadmin");
+
+		
+		//Pré cadastro de produtos no sistema
+		Produto p1 = new Produto(0,"Televisão 70''","Samsung - 4k",150000.00,1);
+		produtos.add(p1);
+		Produto p2 = new Produto(1,"Cama casal","Castor",1500.00,1);
+		produtos.add(p2);
+		Produto p3 = new Produto(2,"Ferro de passar","Bom",25.00,1);
+		produtos.add(p3);
 	}
 
 	public static Banco getInstance() {
@@ -33,9 +44,11 @@ public class Banco {
 	
 	public Produto buscarProduto(int cod) {
 		Produto result = new Produto();
-		for (Produto p : produtos) {
-			if(cod == p.getCod()){
-				result = p;
+		synchronized(produtos){
+			for (Produto p : produtos) {
+				if(cod == p.getCod()){
+					result = p;
+				}
 			}
 		}
 		return result;

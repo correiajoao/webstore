@@ -42,22 +42,32 @@ public class servletProdutosCarrinho extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		
-		if(session != null){	
+		if(session != null){
 			Carrinho c = (Carrinho) session.getAttribute("carrinho");
-			List<Produto> produtosCarrinho = c.getListaDeProdutos();
+			if(c != null){
+				List<Produto> produtosCarrinho = c.getListaDeProdutos();
+				
+				out.println("<table border='1'>");
+				out.println("<caption>Produtos no carrinho</caption>");
+				out.println("<tr><th>Código</th><th>Produto</th><th>Valor</th><th>Quantidade</th><th>Preço</th></tr>");
+				
+				for (Produto p : produtosCarrinho) {
+					out.println("<tr><td>"+p.getCod()+"</td><td>"+p.getNome()+"</td><td>"+p.getPreco()+"</td><td>"+p.getQtd()+"</td><td>"+p.getQtd()*p.getPreco()+"</td></tr>");	
+				}
+				out.println("</table>");
 			
-			out.println("<table border='1'>");
-			out.println("<caption>Produtos no carrinho</caption>");
-			out.println("<tr><th>Código</th><th>Produto</th><th>Valor</th><th>Quantidade</th><th>Preço</th></tr>");
-			
-			for (Produto p : produtosCarrinho) {
-				out.println("<tr><td>"+p.getCod()+"</td><td>"+p.getNome()+"</td><td>"+p.getPreco()+"</td><td>"+p.getQtd()+"</td><td>"+p.getQtd()*p.getPreco()+"</td></tr>");	
+			}else{
+				out.println("Sem produtos no carrinho");
 			}
-			out.println("</table>");
+			out.println("<a href='servletLimparCarrinho.jsp'> Limpar Carrinho</a>");
+			out.println("<a href='index.html'> Página inicial</a>");
+			out.println("</body>");
+			out.println("</body>");
+			out.println("</hmtl>");
+			
+	}else{
+		out.println("Sem produtos no carrinho");
 		
-		}else{
-			out.println("Sem produtos no carrinho");
-		}
 		out.println("<a href='servletLimparCarrinho.jsp'> Limpar Carrinho</a>");
 		out.println("<a href='index.html'> Página inicial</a>");
 		out.println("</body>");
@@ -65,4 +75,6 @@ public class servletProdutosCarrinho extends HttpServlet {
 		out.println("</hmtl>");
 		
 	}
+		
+  }	
 }
