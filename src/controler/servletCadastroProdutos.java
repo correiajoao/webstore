@@ -36,7 +36,7 @@ public class servletCadastroProdutos extends HttpServlet {
 			Administrador admin = (Administrador) session.getAttribute("administrador");
 			
 			if(admin != null){
-				response.sendRedirect("cadastroProdutos.html");
+				response.sendRedirect("cadastrar_produtos.html");
 			}else{
 				response.sendRedirect("loginAdministrador.html");
 			}
@@ -67,7 +67,7 @@ public class servletCadastroProdutos extends HttpServlet {
 				p.setPreco(precoDouble);
 				
 				Banco.getInstance().addProduto(p);
-				response.sendRedirect("servletListarProdutos.jsp");
+				response.sendRedirect("listar_produtos.jsp");
 			}else{
 				response.sendRedirect("loginAdministrador.html");
 			}

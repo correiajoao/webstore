@@ -76,7 +76,7 @@ public class servletAddCarrinho extends HttpServlet {
 	session.invalidate();	
 	session = request.getSession(true);
 	session.setAttribute("carrinho", carrinho);
-	response.sendRedirect("servletListarProdutos.jsp");
+	response.sendRedirect("listar_produtos.jsp");
 		
 	}
 }	
