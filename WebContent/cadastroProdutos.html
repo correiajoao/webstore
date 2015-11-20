@@ -1,22 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Cadastro</title>
+	<meta charset="UTF-8">
+	<title>Cadastro</title>
+	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+	<!--<link href="css/loginAdministrador.css" rel="stylesheet" media="screen">-->
+	<link href="css/webstore.css" rel="stylesheet" media="screen">
 </head>
 <body>
 
   <script type="text/javascript" src="javascript/jquery-1.11.2.js"></script>	
   <script src="javascript/cadastroProduto.js" type="text/javascript"></script>
 
-<form action="servletCadastroProdutos.jsp" method="post">
-	Nome <input type="text" name="nome">
-	Descrição <input type="text" name="descricao">
-	Preço <input type="text" name="preco">
-	<input type="submit" value="Enviar"> 
-</form>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="index.html">Home</a>
+	    </div>
+	    <div>
+	      <ul class="nav navbar-nav">
+	        <li><a href="servletListarProdutos.jsp">Listar Produtos</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
 
-<a href="servletLogoutAdministrador.jsp">Deslogar e finalizar cadastros</a>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-3 col-md-6">
+				<p>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Novo Produto</h3>
+					</div>
+					<div class="panel-body">
+						<form action="servletCadastroProdutos.jsp" method="post">
+							<div class="form-group">
+								<label>Nome</label>
+								<input type="text" name="nome" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Descrição</label>
+								<input type="text" name="descricao" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Preço</label>
+								<input type="text" name="preco" class="form-control">
+							</div>
+							<input type="submit" value="Enviar" class="btn btn-success"> 
+							<a href="servletLogoutAdministrador.jsp">Deslogar e finalizar cadastros</a>
+						</form>
+					</div>
+				</div>
+				</p>
+			</div>
+		</div>
+	</div>
+<script src="javascript/bootstrap.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,48 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: #CFD8DC;
+	color: #212121;
+}
+
+.navbar{
+	border-radius: 0px;	
+}
+
+.navbar-default {
+	background-color: #607D8B;
+	border-color: #607D8B;
+}
+
+	.navbar-default .navbar-brand {
+		color: #ffffff;
+	}
+	
+	.navbar-default .navbar-brand:hover {
+		color: #ffffff;
+	}
+	
+	.navbar-default .navbar-nav li {
+		transition: 0.3s;
+	}
+	
+	.navbar-default .navbar-nav li:hover {
+		background: #455A64;
+	}
+	
+	.navbar-default .navbar-nav li a {
+		color: #ffffff;
+	}
+	
+	.navbar-default .navbar-nav li a:hover {
+		color: #ffffff;
+	}
+
+.panel {
+	border: 8px solid #607D8B;
+}
+
+	.panel-default .panel-heading {
+		background: #CFD8DC;
+		border-radius: 0px;
+	}

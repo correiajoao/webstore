@@ -67,7 +67,7 @@ public class servletCadastroProdutos extends HttpServlet {
 				p.setPreco(precoDouble);
 				
 				Banco.getInstance().addProduto(p);
-				response.sendRedirect("cadastroProdutos.html");
+				response.sendRedirect("servletListarProdutos.jsp");
 			}else{
 				response.sendRedirect("loginAdministrador.html");
 			}
