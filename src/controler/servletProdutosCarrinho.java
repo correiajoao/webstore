@@ -39,15 +39,28 @@ public class servletProdutosCarrinho extends HttpServlet {
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<title>Produtos no carrinho</title>");
+		out.println("<link href='css/bootstrap.css' rel='stylesheet' media='screen'>");
+		out.println("<link href='css/webstore.css' rel='stylesheet' media='screen'>");
 		out.println("</head>");
 		out.println("<body>");
+		out.println("<nav class='navbar navbar-default'>");
+		out.println("<div class='container-fluid'>");
+		out.println("<div class='navbar-header'>");
+		out.println("<a class='navbar-brand' href='index.html'>Home</a></div>");
+		out.println("<div><ul class='nav navbar-nav'>");
+		out.println("<li><a href='servletLimparCarrinho.jsp'> Limpar Carrinho</a></li>");
+		out.println("</ul></div></div></nav>");
+		out.println("<div class='container'>");
+		out.println("<div class='row'><p>");
+		out.println("<div class='col-md-offset-2 col-md-8'>");
+		out.println("<div class='panel panel-default'>");
 		
 		if(session != null){
 			Carrinho c = (Carrinho) session.getAttribute("carrinho");
 			if(c != null){
 				List<Produto> produtosCarrinho = c.getListaDeProdutos();
 				
-				out.println("<table border='1'>");
+				out.println("<table class='table table-striped table-hover'>");
 				out.println("<caption>Produtos no carrinho</caption>");
 				out.println("<tr><th>Código</th><th>Produto</th><th>Valor</th><th>Quantidade</th><th>Preço</th></tr>");
 				
@@ -55,21 +68,18 @@ public class servletProdutosCarrinho extends HttpServlet {
 					out.println("<tr><td>"+p.getCod()+"</td><td>"+p.getNome()+"</td><td>"+p.getPreco()+"</td><td>"+p.getQtd()+"</td><td>"+p.getQtd()*p.getPreco()+"</td></tr>");	
 				}
 				out.println("</table>");
+				out.println("</div></div></div></div>");
 			
 			}else{
 				out.println("Sem produtos no carrinho");
-			}
-			out.println("<a href='servletLimparCarrinho.jsp'> Limpar Carrinho</a>");
-			out.println("<a href='index.html'> Página inicial</a>");
-			out.println("</body>");
+			}			
+			out.println("</div></div></div></div>");
 			out.println("</body>");
 			out.println("</hmtl>");
 			
 	}else{
 		out.println("Sem produtos no carrinho");
-		
-		out.println("<a href='servletLimparCarrinho.jsp'> Limpar Carrinho</a>");
-		out.println("<a href='index.html'> Página inicial</a>");
+		out.println("</div></div></div></div>");
 		out.println("</body>");
 		out.println("</body>");
 		out.println("</hmtl>");

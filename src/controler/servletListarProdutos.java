@@ -54,7 +54,7 @@ public class servletListarProdutos extends HttpServlet {
 				out.println("<nav class='navbar navbar-default'>");
 				out.println("<div class='container-fluid'>");
 				out.println("<div class='navbar-header'>");
-				out.println("<a class='navbar-brand' href='index.html'>Home</a></div>");
+				out.println("<a class='navbar-brand'>Admin</a></div>");
 				out.println("<div><ul class='nav navbar-nav'>");
 				out.println("</ul></div></div></nav>");
 				out.println("<div class='container'>");
