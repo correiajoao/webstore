@@ -31,23 +31,26 @@ public class servletAddCarrinho extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
+		
 		Carrinho carrinho = new Carrinho();
 		
 		String id = request.getParameter("id");		
 		int idInt = Integer.parseInt(id);
 		
 		if(session == null){
-			session = request.getSession(true);
+			session = request.getSession(false);
 			Produto p = Banco.getInstance().buscarProduto(idInt);
 			p.setQtd(1);
 			carrinho.adicionarProduto(p);
 		}else if (session != null){
 			carrinho = (Carrinho) session.getAttribute("carrinho");	
 			if(carrinho == null){
+				carrinho = new Carrinho();
 				session = request.getSession(true);
 				Produto p = Banco.getInstance().buscarProduto(idInt);
 				p.setQtd(1);
 				carrinho.adicionarProduto(p);	
+				session.setAttribute("carrinho", carrinho);
 			}else {
 				System.out.println("Com sessão");
 				carrinho = (Carrinho) session.getAttribute("carrinho");	
@@ -64,7 +67,6 @@ public class servletAddCarrinho extends HttpServlet {
 							System.out.println("Quantidade "+ _p.getQtd());
 						}
 					}
-					
 				carrinho.removerProduto(produtoAux);
 				produtoAux.setQtd(produtoAux.getQtd()+1);
 				carrinho.adicionarProduto(produtoAux);
@@ -73,7 +75,7 @@ public class servletAddCarrinho extends HttpServlet {
 				}		
 		}
 	}
-	session.invalidate();	
+		
 	session = request.getSession(true);
 	session.setAttribute("carrinho", carrinho);
 	response.sendRedirect("listar_produtos.jsp");
