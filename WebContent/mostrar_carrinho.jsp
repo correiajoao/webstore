@@ -23,7 +23,11 @@ Carrinho c = (Carrinho) session.getAttribute("carrinho");
 			<div class='col-md-offset-2 col-md-8'>
 				<div class='panel panel-default'>
 					<table class="table table-striped table-hover">
-						<caption>Produtos no carrinho</caption>
+						<caption>Produtos no carrinho 
+							<a href='servletLimparCarrinho.jsp' class="btn btn-danger btn-xs navbar-right" style="margin-right: 0px"> 
+								Limpar Carrinho
+							</a>
+						</caption>
 						<tr>
 							<th>Código</th>
 							<th>Produto</th>
@@ -45,7 +49,6 @@ Carrinho c = (Carrinho) session.getAttribute("carrinho");
 			</div>
 		</div>
 	</div>
-	<a href='servletLimparCarrinho.jsp'> Limpar Carrinho</a>
 	<% } else{ %>
 	<div class='container'>
 		<div class='row'><p>

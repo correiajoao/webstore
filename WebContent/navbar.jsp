@@ -14,7 +14,7 @@
 				<% if (admin != null) { %>
 					<li><a href="cadastrar_produtos.jsp">Cadastrar Produtos</a></li>
 				<% }  else {%>
-					<li><a href="mostrar_carrinho.jsp">Mostrar Carrinho</a></li>
+					<li><a href="mostrar_carrinho.jsp" class="botao-carrinho">Mostrar Carrinho</a></li>
 				<% } %>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
