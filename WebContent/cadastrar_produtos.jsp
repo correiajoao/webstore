@@ -41,7 +41,6 @@
 								<input type="text" name="preco" class="form-control">
 							</div>
 							<input type="submit" value="Enviar" class="btn btn-success"> 
-							<a href="servletLogoutAdministrador.jsp">Deslogar e finalizar cadastros</a>
 						</form>
 					</div>
 				</div>

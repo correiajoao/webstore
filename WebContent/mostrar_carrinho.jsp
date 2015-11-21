@@ -7,39 +7,53 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Meu Carrinho</title>
+<link href='css/bootstrap.css' rel='stylesheet' media='screen'>
+<link href='css/webstore.css' rel='stylesheet' media='screen'>
 </head>
 <body>
+<%@include file="navbar.jsp" %>
 <%
 Carrinho c = (Carrinho) session.getAttribute("carrinho");
 %>
 <% if(session != null && c != null) { %>
 <% List<Produto> produtosCarrinho = c.getListaDeProdutos(); %>
-	<table border='1'>
-		<caption>Produtos no carrinho</caption>
-		<tr>
-			<th>Código</th>
-			<th>Produto</th>
-			<th>Valor</th>
-			<th>Quantidade</th>
-			<th>Preço</th>
-		</tr>
-		<% for (Produto p : produtosCarrinho) { %>
-			<tr>
-				<td><%=p.getCod()%></td>
-				<td><%=p.getNome()%></td>
-				<td><%=p.getPreco()%></td>
-				<td><%=p.getQtd()%></td>
-				<td><%=p.getQtd()*p.getPreco()%></td>
-			</tr>	
-		<% } %>
-	</table>
+	<div class='container'>
+		<div class='row'><p>
+			<div class='col-md-offset-2 col-md-8'>
+				<div class='panel panel-default'>
+					<table class="table table-striped table-hover">
+						<caption>Produtos no carrinho</caption>
+						<tr>
+							<th>Código</th>
+							<th>Produto</th>
+							<th>Valor</th>
+							<th>Quantidade</th>
+							<th>Preço</th>
+						</tr>
+						<% for (Produto p : produtosCarrinho) { %>
+							<tr>
+								<td><%=p.getCod()%></td>
+								<td><%=p.getNome()%></td>
+								<td><%=p.getPreco()%></td>
+								<td><%=p.getQtd()%></td>
+								<td><%=p.getQtd()*p.getPreco()%></td>
+							</tr>	
+						<% } %>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
 	<a href='servletLimparCarrinho.jsp'> Limpar Carrinho</a>
-<% } else{ %>
-	Sem produtos no carrinho
-<% } %>		
-
-<a href='index.jsp'> Página inicial</a>
-
+	<% } else{ %>
+	<div class='container'>
+		<div class='row'><p>
+			<div class='col-md-offset-2 col-md-8'>
+				Sem produtos no carrinho<a href='index.jsp'> Página inicial</a>
+			</div>
+		</div>
+	</div>
+	<% } %>		
 </body>
 </html>

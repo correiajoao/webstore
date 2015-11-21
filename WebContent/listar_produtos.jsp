@@ -32,10 +32,6 @@ if (session != null) {
 							<tr><td><%=p.getCod()%></td><td><%=p.getNome()%></td><td><%=p.getDescricao()%></td><td><%="R$ " + p.getPreco()%></td></tr>
 						<% } %>
 					</table>
-					<div class='panel-body'>
-					<a href='servletCadastroProdutos.jsp' class='btn btn-success'>Cadastrar Produto</a>
-					<a href='servletLogoutAdministrador.jsp'>Deslogar e finalizar cadastros</a>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -54,7 +50,6 @@ if (session != null) {
 						<% } %>
 					</table>
 				</div>
-				<a href='servletCadastroProdutos.jsp' class='btn btn-success'>Cadastrar Produto</a>
 			</div>
 		</div>
 	</div>
@@ -73,7 +68,6 @@ if (session != null) {
 						<%} %>
 					</table>
 				</div>
-				<a href='servletCadastroProdutos.jsp' class='btn btn-success'>Cadastrar Produto</a>
 			</div>
 		</div>
 	</div>

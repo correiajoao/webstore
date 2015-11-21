@@ -36,7 +36,12 @@ public class servletAddCarrinho extends HttpServlet {
 		String id = request.getParameter("id");		
 		int idInt = Integer.parseInt(id);
 		
-		if (session != null){
+		if(session == null){
+			session = request.getSession(true);
+			Produto p = Banco.getInstance().buscarProduto(idInt);
+			p.setQtd(1);
+			carrinho.adicionarProduto(p);
+		}else if (session != null){
 			carrinho = (Carrinho) session.getAttribute("carrinho");	
 			if(carrinho == null){
 				carrinho = new Carrinho();
