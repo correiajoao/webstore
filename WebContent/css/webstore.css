@@ -5,6 +5,13 @@ body {
 	color: #212121;
 }
 
+body.fundo{
+	background-image: url("../img/fundo.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:top;
+}
+
 .navbar{
 	border-radius: 0px;	
 }
@@ -45,4 +52,12 @@ body {
 	.panel-default .panel-heading {
 		background: #CFD8DC;
 		border-radius: 0px;
+	}
+
+	.jumbotron{
+		background: rgba(255, 255, 255, 0.7); 
+	}
+	
+	.text-justify{
+  		text-align: justify;
 	}
