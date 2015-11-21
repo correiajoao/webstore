@@ -31,7 +31,7 @@ public class servletLimparCarrinho extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		session.invalidate();
 		
-		response.sendRedirect("index.html");
+		response.sendRedirect("index.jsp");
 	}
 
 	/**

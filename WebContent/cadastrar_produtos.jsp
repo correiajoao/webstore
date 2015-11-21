@@ -1,7 +1,11 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="model.*" %>
+<%@ page import="java.util.List" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Cadastro</title>
 	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
 	<!--<link href="css/loginAdministrador.css" rel="stylesheet" media="screen">-->
@@ -12,18 +16,7 @@
   <script type="text/javascript" src="javascript/jquery-1.11.2.js"></script>	
   <script src="javascript/cadastroProduto.js" type="text/javascript"></script>
 
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="index.html">Home</a>
-	    </div>
-	    <div>
-	      <ul class="nav navbar-nav">
-	        <li><a href="listar_produtos.jsp">Listar Produtos</a></li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
+<%@include file="navbar.jsp"%>
 
 	<div class="container">
 		<div class="row">

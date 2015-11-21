@@ -36,12 +36,12 @@ public class servletCadastroProdutos extends HttpServlet {
 			Administrador admin = (Administrador) session.getAttribute("administrador");
 			
 			if(admin != null){
-				response.sendRedirect("cadastrar_produtos.html");
+				response.sendRedirect("cadastrar_produtos.jsp");
 			}else{
-				response.sendRedirect("loginAdministrador.html");
+				response.sendRedirect("login_administrador.jsp");
 			}
 		}else{
-			response.sendRedirect("loginAdministrador.html");
+			response.sendRedirect("login_administrador.jsp");
 		}
 	}	
 
@@ -69,10 +69,10 @@ public class servletCadastroProdutos extends HttpServlet {
 				Banco.getInstance().addProduto(p);
 				response.sendRedirect("listar_produtos.jsp");
 			}else{
-				response.sendRedirect("loginAdministrador.html");
+				response.sendRedirect("login_administrador.html");
 			}
 		}else{
-			response.sendRedirect("loginAdministrador.html");
+			response.sendRedirect("login_administrador.html");
 		}	
 	}
 

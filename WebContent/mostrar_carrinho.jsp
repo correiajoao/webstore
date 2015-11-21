@@ -34,12 +34,12 @@ Carrinho c = (Carrinho) session.getAttribute("carrinho");
 			</tr>	
 		<% } %>
 	</table>
+	<a href='servletLimparCarrinho.jsp'> Limpar Carrinho</a>
 <% } else{ %>
 	Sem produtos no carrinho
 <% } %>		
 
-<a href='servletLimparCarrinho.jsp'> Limpar Carrinho</a>
-<a href='index.html'> Página inicial</a>
+<a href='index.jsp'> Página inicial</a>
 
 </body>
 </html>

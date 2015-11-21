@@ -11,26 +11,15 @@
 <link href='css/webstore.css' rel='stylesheet' media='screen'>
 </head>
 <body>
-
+<%@include file="navbar.jsp" %>
 <% List<Produto> produtos = Banco.getInstance().getProdutos();%>
 
 <%
 if (session != null) {
 	
-	Administrador admin = (Administrador) session.getAttribute("administrador");
+	//Administrador admin = (Administrador) session.getAttribute("administrador");
 	
 	if (admin != null) { %>				
-	<nav class='navbar navbar-default'>
-		<div class='container-fluid'>
-			<div class='navbar-header'>
-				<a class='navbar-brand' href='index.html'>Home</a>
-			</div>
-			<div>
-				<ul class='nav navbar-nav'>
-				</ul>
-			</div>
-		</div>
-	</nav>
 		
 	<div class='container'>
 		<div class='row'><p>
@@ -52,19 +41,7 @@ if (session != null) {
 		</div>
 	</div>
 <% } else { %>
-	<nav class='navbar navbar-default'>
-	<div class='container-fluid'>
-		<div class='navbar-header'>
-			<a class='navbar-brand' href='index.html'>Home</a>
-		</div>
-		<div>
-			<ul class='nav navbar-nav'>
-			<li><a href='mostrar_carrinho.jsp'> Mostrar Carrinho</a></li>
-			<li><a href='servletLimparCarrinho.jsp'> Limpar Carrinho</a></li>
-			</ul>
-		</div>
-	</div>
-	</nav>
+	
 	<div class='container'>
 		<div class='row'><p>
 			<div class='col-md-offset-2 col-md-8'>
@@ -83,18 +60,7 @@ if (session != null) {
 	</div>
 <% } %>
 <% } else { %>
-	<nav class='navbar navbar-default'>
-		<div class='container-fluid'>
-			<div class='navbar-header'>
-				<a class='navbar-brand' href='index.html'>Home</a>
-			</div>
-			<div><ul class='nav navbar-nav'>
-				<li><a href='mostrar_carrinho.jsp'> Mostrar Carrinho</a></li>
-				<li><a href='servletLimparCarrinho.jsp'> Limpar Carrinho</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	
 	<div class='container'>
 		<div class='row'><p>
 			<div class='col-md-offset-2 col-md-8'>
