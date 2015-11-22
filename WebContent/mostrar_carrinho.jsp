@@ -27,7 +27,7 @@ Carrinho c = (Carrinho) session.getAttribute("carrinho");
 							<a href='servletLimparCarrinho.jsp' class="btn btn-danger btn-xs navbar-right" style="margin-right: 0px"> 
 								Limpar Carrinho
 							</a>
-							<a href='formulario_compra.jsp' class="btn btn-danger btn-xs navbar-right" style="margin-right: 0px"> 
+							<a href='formulario_compra.jsp' class="btn btn-success btn-xs navbar-right" style="margin-right: 5px"> 
 								Finalizar Compra
 							</a>
 						</caption>
@@ -49,6 +49,12 @@ Carrinho c = (Carrinho) session.getAttribute("carrinho");
 						<% } %>
 					</table>
 				</div>
+				<a href='servletLimparCarrinho.jsp' class="btn btn-danger btn-xs navbar-right" style="margin-right: 22px"> 
+					Limpar Carrinho
+				</a>
+				<a href='formulario_compra.jsp' class="btn btn-success btn-xs navbar-right" style="margin-right: 5px"> 
+					Finalizar Compra
+				</a>
 			</div>
 		</div>
 	</div>
