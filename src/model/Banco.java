@@ -6,12 +6,15 @@ import java.util.List;
 public class Banco {
 	private static Banco instance = null;
 	private List<Produto> produtos;
+	private List<Compra> compras;
 	Administrador admin;
-	public static int cod = 3;
+	public static int codP = 3;
+	public static int codC = 0;
 
 	
 	private Banco() {
 		produtos = new ArrayList<>();
+		compras = new ArrayList<>();
 		
 		//Pré cadastro do administrador do sistema
 		admin = new Administrador("admin@admin.com", "adminadmin");
@@ -33,13 +36,23 @@ public class Banco {
 	}
 
 	public void addProduto(Produto p) {
-		p.setCod(cod);
+		p.setCod(codP);
 		produtos.add(p);
-		cod++;
+		codP++;
 	}
 
 	public List<Produto> getProdutos() {
 		return produtos;
+	}
+	
+	public void addCompra(Compra c) {
+		c.setCod(codC);
+		compras.add(c);
+		codC++;		
+	}
+
+	public List<Compra> getCompras() {
+		return compras;
 	}
 	
 	public Produto buscarProduto(int cod) {

@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Carrinho {
-	
 	private List<Produto> lista = new ArrayList<Produto>(); 
-
+	
 	public List<Produto> getListaDeProdutos() {
 		return lista;
 	}
@@ -27,5 +26,12 @@ public class Carrinho {
 			}
 		}
 		return result;
-	}	
+	}
+	
+	public double getTotal(){
+		double total = 0;
+		for (Produto p : lista)
+			total += p.getQtd()*p.getPreco();
+		return total;
+	}
 }

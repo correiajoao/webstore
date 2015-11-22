@@ -27,6 +27,9 @@ Carrinho c = (Carrinho) session.getAttribute("carrinho");
 							<a href='servletLimparCarrinho.jsp' class="btn btn-danger btn-xs navbar-right" style="margin-right: 0px"> 
 								Limpar Carrinho
 							</a>
+							<a href='formulario_compra.jsp' class="btn btn-danger btn-xs navbar-right" style="margin-right: 0px"> 
+								Finalizar Compra
+							</a>
 						</caption>
 						<tr>
 							<th>Código</th>

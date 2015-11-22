@@ -13,6 +13,7 @@
 				<li><a href="listar_produtos.jsp">Listar Produtos</a></li>		
 				<% if (admin != null) { %>
 					<li><a href="cadastrar_produtos.jsp">Cadastrar Produtos</a></li>
+					<li><a href="listar_compras.jsp">Compras</a></li>
 				<% }  else {%>
 					<li><a href="mostrar_carrinho.jsp" class="botao-carrinho">Mostrar Carrinho</a></li>
 				<% } %>

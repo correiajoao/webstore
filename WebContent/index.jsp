@@ -21,7 +21,7 @@
 				</div>
 				<div class="col-md-7 text-justify">
 					<p>O grupo <strong>Lojas Asiáticas</strong> surgiu em 1997, quando <strong>Kim Jong-dos</strong>, cansado do marasmo das fazendas de arroz, passou a vendê-lo através novidade da época: <strong>a internet</strong>.</p>
-					<p>Na virada do milênio, o negócio já era englobava 134% da produção e comércio de arroz no país. Sinal claro da necessidade de expansão. </p>
+					<p>Na virada do milênio, o negócio já englobava 134% da produção e comércio de arroz no país. Sinal claro da necessidade de expansão. </p>
 					<p>15 anos e 元 17.000.000.000.000,00 depois, consegue vencer a burocracia brasileira e abrir sua primeira filial sulamericana, para perceber que o ocidente não era tão ávido por arroz.</p>
 					<p>Eis que encontra uma solução: vender produtos diversos, usando o arroz como <strong>plástico bolha e sílica </strong>ao mesmo tempo, a marca da empresa.</p>
 				</div>
