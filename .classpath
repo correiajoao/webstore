@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-8-oracle">
+	<classpathentry kind="src" output="target/classes" path="src">
 		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0">
@@ -13,5 +18,34 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="output" path="build/classes"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/catalina-ha.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/catalina-storeconfig.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/catalina-tribes.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/catalina.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/ecj-4.6.1.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/jasper-el.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/jasper.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/tomcat-i18n-es.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/tomcat-i18n-fr.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/tomcat-i18n-ja.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/tomcat-jdbc.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/tomcat-jni.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/tomcat-util-scan.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/tomcat-util.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/tomcat-websocket.jar"/>
+	<classpathentry kind="lib" path="/Users/joaocorreia/Downloads/apache-tomcat-8.0.43/lib/websocket-api.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>

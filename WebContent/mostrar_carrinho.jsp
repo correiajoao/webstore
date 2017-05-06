@@ -33,6 +33,7 @@ Carrinho c = (Carrinho) session.getAttribute("carrinho");
 						</caption>
 						<tr>
 							<th>Código</th>
+							<td>Imagem</td>
 							<th>Produto</th>
 							<th>Valor</th>
 							<th>Quantidade</th>
@@ -41,6 +42,7 @@ Carrinho c = (Carrinho) session.getAttribute("carrinho");
 						<% for (Produto p : produtosCarrinho) { %>
 							<tr>
 								<td><%=p.getCod()%></td>
+								<td><img class="product" src="<%=p.getImagem()%>"/></td>
 								<td><%=p.getNome()%></td>
 								<td><%=p.getPreco()%></td>
 								<td><%=p.getQtd()%></td>

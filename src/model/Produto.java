@@ -4,17 +4,21 @@ public class Produto {
 	private int cod;
 	private String nome;
 	private String descricao;
+	private String imagem;
 	private double preco;
 	private int qtd;
 	
-	public Produto(int cod, String nome, String descricao, double preco, int qtd) {
+	
+	public Produto(int cod, String imagem, String nome, String descricao, double preco, int qtd) {
+		super();
 		this.cod = cod;
 		this.nome = nome;
 		this.descricao = descricao;
+		this.imagem = imagem;
 		this.preco = preco;
 		this.qtd = qtd;
 	}
-	
+
 	public Produto() {
 	
 	}
@@ -70,6 +74,14 @@ public class Produto {
 	
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
 	}
 	
 	

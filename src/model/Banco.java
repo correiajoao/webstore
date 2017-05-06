@@ -21,11 +21,11 @@ public class Banco {
 
 		
 		//Pré cadastro de produtos no sistema
-		Produto p1 = new Produto(0,"Televisão 70''","Samsung - 4k",150000.00,1);
+		Produto p1 = new Produto(0,"http://img.ibxk.com.br/materias/6360/98339.jpg","Televisão 70''","Samsung - 4k",150000.00,1);
 		produtos.add(p1);
-		Produto p2 = new Produto(1,"Cama casal","Castor",1500.00,1);
+		Produto p2 = new Produto(1,"http://www.filhao.com.br/produtos/imagens/19212-det-colchao-castor-de-molas-pocket-gold-star-green-viscoelastico-euro-pilo.jpg","Cama casal","Castor",1500.00,1);
 		produtos.add(p2);
-		Produto p3 = new Produto(2,"Ferro de passar","Bom",25.00,1);
+		Produto p3 = new Produto(2,"http://www.casasbahia-imagens.com.br/Eletroportateis/FerrodePassar/FerroaSeco/2633/28072/Ferro-a-Seco-Black-Decker-VFA-2633.jpg","Ferro de passar","Bom",25.00,1);
 		produtos.add(p3);
 	}
 

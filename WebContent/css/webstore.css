@@ -5,6 +5,8 @@ body {
 	color: #212121;
 }
 
+
+
 body.fundo{
 	background-image: url("../img/fundo.jpg");
 	background-repeat:no-repeat;
@@ -61,3 +63,9 @@ body.fundo{
 	.text-justify{
   		text-align: justify;
 	}
+	
+.product{
+	border-radius:8px;
+	width:150px;
+	height: 100px;
+}

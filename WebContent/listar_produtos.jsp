@@ -27,9 +27,9 @@ if (session != null) {
 				<div class='panel panel-default'>
 					<table class='table table-striped table-hover'>						
 						<Caption>Produtos</Caption>	
-						<tr><th>Código</th><th>Nome</th><th>Descrição</th><th>Preço</th></tr>
+						<tr><th>Código</th><th>Imagem</th><th>Nome</th><th>Descrição</th><th>Preço</th></tr>
 						<% for (Produto p : produtos) { %>
-							<tr><td><%=p.getCod()%></td><td><%=p.getNome()%></td><td><%=p.getDescricao()%></td><td><%="R$ " + p.getPreco()%></td></tr>
+							<tr><td><%=p.getCod()%></td><td><img class="product" src="<%=p.getImagem()%>" /></td><td><%=p.getNome()%></td><td><%=p.getDescricao()%></td><td><%="R$ " + p.getPreco()%></td></tr>
 						<% } %>
 					</table>
 				</div>
@@ -44,9 +44,9 @@ if (session != null) {
 				<div class='panel panel-default'>
 					<table class='table table-striped table-hover'>					
 						<Caption>Produtos</Caption>	
-						<tr><th>Código</th><th>Nome</th><th>Descrição</th><th>Preço</th><th>Compra</th></tr>
+						<tr><th>Código</th><th>Imagem</th><th>Nome</th><th>Descrição</th><th>Preço</th><th>Compra</th></tr>
 						<% for (Produto p : produtos) { %>
-							<tr><td><%=p.getCod()%></td><td><%=p.getNome()%></td><td><%=p.getDescricao()%></td><td><%="R$ " + p.getPreco()%></td><td><form action='servletAddCarinho.jsp'> <input type='hidden' name='id' value='<%=p.getCod()%>'><input type='submit' value='Comprar' class='btn btn-xs btn-primary'></form></td></tr>
+							<tr><td><%=p.getCod()%></td><td><img class="product" src="<%=p.getImagem()%>"/></td><td><%=p.getNome()%></td><td><%=p.getDescricao()%></td><td><%="R$ " + p.getPreco()%></td><td><form action='servletAddCarinho.jsp'> <input type='hidden' name='id' value='<%=p.getCod()%>'><input type='submit' value='Comprar' class='btn btn-xs btn-primary'></form></td></tr>
 						<% } %>
 					</table>
 				</div>
@@ -62,9 +62,9 @@ if (session != null) {
 				<div class='panel panel-default'>
 					<table class='table table-striped table-hover'>
 						<Caption>Produtos</Caption>	
-						<tr><th>Código</th><th>Nome</th><th>Descrição</th><th>Preço</th><th>Compra</th></tr>
+						<tr><th>Código</th><th>Imagem</th><th>Nome</th><th>Descrição</th><th>Preço</th><th>Compra</th></tr>
 						<%for (Produto p : produtos) { %>
-							<tr><td><%=p.getCod()%></td><td><%=p.getNome()%></td><td><%=p.getDescricao()%></td><td><%="R$ " + p.getPreco()%></td></tr>
+							<tr><td><%=p.getCod()%></td><td><img class="product" src="<%=p.getImagem()%>" /><td><%=p.getNome()%></td><td><%=p.getDescricao()%></td><td><%="R$ " + p.getPreco()%></td></tr>
 						<%} %>
 					</table>
 				</div>
