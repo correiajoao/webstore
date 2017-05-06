@@ -56,6 +56,7 @@ public class servletCadastroProdutos extends HttpServlet {
 			
 			if(admin != null){			
 				String nome = request.getParameter("nome");
+				String imagem = request.getParameter("imagem");
 				String descricao = request.getParameter("descricao");
 				String preco = request.getParameter("preco");
 				
@@ -63,6 +64,7 @@ public class servletCadastroProdutos extends HttpServlet {
 				
 				Produto p = new Produto();
 				p.setNome(nome);
+				p.setImagem(imagem);
 				p.setDescricao(descricao);
 				p.setPreco(precoDouble);
 				

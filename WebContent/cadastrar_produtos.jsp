@@ -33,6 +33,10 @@
 								<input type="text" name="nome" class="form-control">
 							</div>
 							<div class="form-group">
+								<label>Imagem</label>
+								<input type="text" name="imagem" class="form-control">
+							</div>
+							<div class="form-group">
 								<label>Descrição</label>
 								<input type="text" name="descricao" class="form-control">
 							</div>
