@@ -33,11 +33,11 @@ Carrinho c = (Carrinho) session.getAttribute("carrinho");
 						</caption>
 						<tr>
 							<th>Código</th>
-							<td>Imagem</td>
+							<th>Imagem</th>
 							<th>Produto</th>
 							<th>Valor</th>
 							<th>Quantidade</th>
-							<th>Preço</th>
+							<th>Total</th>
 						</tr>
 						<% for (Produto p : produtosCarrinho) { %>
 							<tr>
@@ -46,7 +46,7 @@ Carrinho c = (Carrinho) session.getAttribute("carrinho");
 								<td><%=p.getNome()%></td>
 								<td><%=p.getPreco()%></td>
 								<td><%=p.getQtd()%></td>
-								<td><%=p.getQtd()*p.getPreco()%></td>
+								<td><%= "R$ " + p.getQtd()*p.getPreco()%></td>
 							</tr>	
 						<% } %>
 					</table>

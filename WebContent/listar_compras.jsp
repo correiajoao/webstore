@@ -43,7 +43,7 @@
 							<td><%=c.getCod()%></td>
 							<td><%=c.getNomeCliente()%></td>
 							<td><%=c.getEndereco()%></td>
-							<td>R$<%=c.getTotal()%></td>
+							<td><%= "R$ " + c.getTotal()%></td>
 						</tr>
 						<%
 							}

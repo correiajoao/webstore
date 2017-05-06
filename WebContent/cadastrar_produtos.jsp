@@ -44,7 +44,7 @@
 								<label>Preço</label>
 								<input type="text" name="preco" class="form-control">
 							</div>
-							<input type="submit" value="Enviar" class="btn btn-success"> 
+							<input type="submit" value="Cadastrar novo produto" class="btn btn-success"> 
 						</form>
 					</div>
 				</div>
